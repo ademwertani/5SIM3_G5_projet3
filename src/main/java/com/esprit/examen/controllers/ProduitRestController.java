@@ -67,7 +67,7 @@ public class ProduitRestController {
 	public void assignProduitToStock(@PathVariable("idProduit") Long idProduit, @PathVariable("idStock") Long idStock) {
 		produitService.assignProduitToStock(idProduit, idStock);
 	}
-    
+
 	/*
 	 * Revenu Brut d'un produit (qte * prix unitaire de toutes les lignes du
 	 * detailFacture du produit envoyé en paramètre )

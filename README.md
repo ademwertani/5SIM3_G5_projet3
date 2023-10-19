@@ -9,7 +9,7 @@ Ce projet Spring Boot est une application web qui [décrivez brièvement la fonc
 ## Fonctionnalités
 
 - [Listez ici les fonctionnalités clés de votre application, par exemple, gestion des utilisateurs, gestion de produits, etc.]
-  another changing
+  another changing.
 
 ## Prérequis
 

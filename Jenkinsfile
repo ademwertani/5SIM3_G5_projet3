@@ -5,7 +5,7 @@ pipeline {
         stage("GIT") {
             steps {
                 // Clone the Git repository
-                git url: 'your_git_repository_url_here'
+                git url: 'https://github.com/ademwertani/5SIM3_G5_projet3.git'
             }
         }
 

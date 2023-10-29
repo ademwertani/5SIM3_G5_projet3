@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("GIT") {
     steps {
-        withCredentials([string(credentialsId: 'jenkins-example-github-pat', variable: 'GITHUB_PAT')]) {
+        withCredentials([string(credentialsId: 'github-pat', variable: 'GITHUB_PAT')]) {
             // Clone the Git repository using the PAT
             sh "git clone https://${GITHUB_PAT}@github.com/ademwertani/5SIM3_G5_projet3.git"
         }

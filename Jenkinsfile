@@ -2,27 +2,44 @@ pipeline {
     agent any
 
     stages {
+        stage("GIT") {
+            steps {
+                // Clone the Git repository
+                git url: 'your_git_repository_url_here'
+            }
+        }
 
-      stage("build") {
+        stage("MVN CLEAN") {
+            steps {
+                // Run 'mvn clean' in the project directory
+                sh 'mvn clean'
+            }
+        }
 
-          steps {
-            echo 'building the application...'
-          }
-      }
+        stage("MVN COMPILE") {
+            steps {
+                // Run 'mvn compile' in the project directory
+                sh 'mvn compile'
+            }
+        }
 
-      stage("test") {
+        stage("build") {
+            steps {
+                echo 'building the application...'
+            }
+        }
 
-          steps {
-              echo 'testing the application...'
-          }
-      }
+        stage("test") {
+            steps {
+                echo 'testing the application...'
+            }
+        }
 
-      stage("deploy") {
-
+        stage("deploy") {
             steps {
                 echo 'deploying the application'
-              }
-          }
-      }
+            }
+        }
+    }
 }
-                
+

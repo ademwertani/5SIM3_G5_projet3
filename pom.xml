@@ -77,7 +77,7 @@
 		    <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-resources-plugin</artifactId>
-      <version>3.2.0</version> <!-- Version actuelle -->
+      <version>3.1.0</version> <!-- Version actuelle -->
     </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -85,5 +85,13 @@
 			</plugin>
 		</plugins>
 	</build>
+
+		<distributionManagement>
+		<repository>
+			<id>deploymentRepo</id>
+			<name>Nexus Repository</name>
+			<url>http://localhost:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
 
 </project>

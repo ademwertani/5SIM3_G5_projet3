@@ -20,7 +20,7 @@ pipeline {
      stage("MVN CLEAN") {
     steps {
         script {
-            def mvnHome = tool 'Maven'
+            def mvnHome = tool 'M2_HOME'
             sh "${mvnHome}/bin/mvn clean"  // Replace 'clean' with the desired Maven goal
         }
     }

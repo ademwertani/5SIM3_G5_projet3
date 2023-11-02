@@ -27,13 +27,15 @@ stage("MVN CLEAN") {
 
 
 
-
-
-        stage("MVN COMPILE") {
-            steps {
-                sh 'mvn compile'  // Modify Maven goal if needed
-            }
+stage("MVN COMPILE") {
+    steps {
+        // Change the working directory to the cloned repository
+        dir('5SIM3_G5_projet3') { // Use the actual directory name where the repository was cloned
+            sh 'mvn compile'
         }
+    }
+}
+
 
         stage('Sonar Analysis') {
             steps {

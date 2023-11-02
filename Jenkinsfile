@@ -7,13 +7,15 @@ pipeline {
     }
 
     stages {
-        stage("GIT") {
-            steps {
-                withCredentials([string(credentialsId: 'github-pat', variable: 'GITHUB_PAT')]) {
-                    sh "git clone https://${GITHUB_PAT}@github.com/ademwertani/5SIM3_G5_projet3.git"
-                }
-            }
+     stage("GIT") {
+    steps {
+        deleteDir()  // Clean the workspace
+        withCredentials([string(credentialsId: 'github-pat', variable: 'GITHUB_PAT')]) {
+            sh "git clone https://${GITHUB_PAT}@github.com/ademwertani/5SIM3_G5_projet3.git"
         }
+    }
+}
+
 
         stage("MVN CLEAN") {
             steps {

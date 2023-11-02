@@ -16,11 +16,15 @@ pipeline {
     }
 }
 
-  stage("MVN CLEAN") {
-            steps {
-                sh 'mvn clean'  // Modify Maven goal if needed
-            }
+stage("MVN CLEAN") {
+    steps {
+        // Change the working directory to the cloned repository
+        dir('5SIM3_G5_projet3') { // Use the actual directory name where the repository was cloned
+            sh 'mvn clean'
         }
+    }
+}
+
 
 
 

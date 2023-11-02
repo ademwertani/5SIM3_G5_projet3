@@ -16,14 +16,11 @@ pipeline {
     }
 }
 
-stage("MVN CLEAN") {
-    steps {
-        script {
-            def mvnTool = tool 'M2_HOME'
-            sh "${mvnTool}/bin/mvn clean"  // Replace 'clean' with the desired Maven goal
+  stage("MVN CLEAN") {
+            steps {
+                sh 'mvn clean'  // Modify Maven goal if needed
+            }
         }
-    }
-}
 
 
 

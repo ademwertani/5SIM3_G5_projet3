@@ -20,11 +20,12 @@ pipeline {
      stage("MVN CLEAN") {
     steps {
         script {
-            def mvnHome = tool name: 'Maven', type: 'hudson.tasks.Maven$MavenInstallation'
-            sh "${mvnHome}/bin/mvn clean"
+            def mvnHome = tool 'Maven'
+            sh "${mvnHome}/bin/mvn clean"  // Replace 'clean' with the desired Maven goal
         }
     }
 }
+
 
 
         stage("MVN COMPILE") {

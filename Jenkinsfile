@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+//
     environment {
         SONARSERVER = 'sonarserver'  // Replace with your SonarQube server configuration name
         SONARSCANNER = 'sonarscanner'  // Replace with your SonarScanner tool name

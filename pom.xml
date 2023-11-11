@@ -94,4 +94,4 @@
 			<url>http://http://192.168.1.14/:8081/repository/maven-releases/</url>
 		</repository>
 	</distributionManagement>
-</project>
+  </project>

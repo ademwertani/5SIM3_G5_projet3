@@ -78,4 +78,6 @@ public class StockServiceImplTest {
         Stock result = stockService.retrieveStock(stockIdToRetrieve);
         assertEquals(expectedStock, result);
     }
+
+
 }

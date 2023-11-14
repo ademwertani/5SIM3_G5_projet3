@@ -1,0 +1,38 @@
+version: '3.8'
+# definir container
+services:
+
+  db:
+    image: mysql:latest
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tpachato
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - mynetwork
+  # spring app
+  back:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8089:8089"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/tpachato?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    networks:
+      - mynetwork
+
+volumes:
+  db_data:
+networks:
+  mynetwork:
